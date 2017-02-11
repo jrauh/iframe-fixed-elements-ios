@@ -2,96 +2,67 @@
 <html lang="en-US">
   <head>
     <meta charset="utf-8">
-    <title>iFrame Test</title>
+    <title>iframe Test</title>
 
     <link href="normalize.css" rel="stylesheet" />
+    <link href="iframe.css" rel="stylesheet" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+    <script>
+    window.onload = function(){
+      var modal = document.getElementById('modal-container');
+      var button = document.getElementById("modal-button");
+      var close = document.getElementById("modal-close");
+
+      // When the user clicks the button, open the modal
+      button.onclick = function() {
+          modal.style.display = "block";
+      }
+
+      // When the user clicks on <span> (x), close the modal
+      close.onclick = function() {
+          modal.style.display = "none";
+      }
+
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function(event) {
+          if (event.target == modal) {
+              modal.style.display = "none";
+          }
+      }
+    };
+
+    </script>
   </head>
 
-  <body style="background-color: green;">
-    <div style="overflow:scroll; position:absolute; -webkit-overflow-scrolling: touch; width:100%; height:100%;">
-      <div style="position: fixed; padding: 1rem; width: 100%; left: 0; top: 0; background-color: #ccc; color: red;">App Javiga</div>
+  <body style="background-color: #F2F2F2;">
+    <div class="overlay" id="modal-container">
+      <div class="modal" id="modal">
+        <h1>Modal Header</h1>
+        <p>Lorem ipsum dolor sit amet, eleifend dui, convallis imperdiet odio. Libero aptent, sed elit. Ornare eros wisi, id torquent fringilla. Sit dui placerat. Sed lacinia phasellus. Cras cum, ut commodo rutrum. Elementum id, sagittis nam. Dui lectus, sapien diam maecenas. Sed etiam luctus. Nibh tempor, orci lectus, purus morbi.</p>
+        <p>Eu sagittis, ut arcu. Vestibulum sagittis nisl, lobortis eget gravida. Vehicula sem enim, tellus sit, posuere nulla. Fringilla erat sit, erat natoque. Ac elit, fusce pulvinar, sed velit sed. Et risus, massa in id.</p>
+        <p>Morbi faucibus, platea risus. Eget non. Aenean dolor ligula. Ante porta, pede tempus, luctus bibendum integer. Dolor quis, mi in. Nisl id est. Nec nam, malesuada lectus. Lacinia ut, posuere odio nunc. Elementum hendrerit quisque, aliquet luctus semper. Pede dolor commodo, velit magna, donec sollicitudin. Suscipit nulla, in vulputate.</p>
+        <p>Turpis sed. Tincidunt quis maecenas. Ac nulla, condimentum ligula, metus in. Urna felis, malesuada dolor. Vel cras diam, id lobortis, donec rutrum. Condimentum donec vulputate. Accusamus quisque nunc, dolores rutrum, quam eget aenean. Ac blandit magna, posuere risus feugiat, etiam erat ante. Interdum laoreet convallis, erat tortor vestibulum. Lectus pede justo.</p>
+        <button id="modal-close">Close</button>
+      </div>
+    </div>
+    <div class="app">
+      <div class="app-menu">App Container</div>
 
-      <p>App content </p>
-      <p>App content </p>
-      <p>App content </p>
-      <p>App content </p>
-      <p>App content </p>
-      <p>App content </p>
-      <input type="text"/>
-      <input type="text"/>
-      <p>App content </p>
-      <p>App content </p>
-      <p>App content </p>
-      <p>App content </p>
-      <p>App content </p>
-      <p>App content </p>
-      <p>App content </p>
-      <p>App content </p>
-      <p>App content </p>
-      <p>App content </p>
-      <p>App content </p>
-      <p>App content </p>
-      <p>App content </p>
-      <p>App content </p>
-      <p>App content </p>
-      <p>App content </p>
-      <p>App content </p>
-      <p>App content </p>
-      <p>App content </p>
-      <p>App content </p>
-      <p>App content </p>
-      <p>App content </p>
-      <p>App content </p>
-      <p>App content </p>
-      <p>App content </p>
-      <p>App content </p>
-      <p>App content </p>
-      <p>App content </p>
-      <p>App content </p>
-      <p>App content </p>
-      <p>App content </p>
-      <p>App content </p>
-      <p>App content </p>
-      <p>App content </p>
-      <p>App content </p>
-      <p>App content </p>
-      <p>App content </p>
-      <p>App content </p>
-      <p>App content </p>
-      <p>App content </p>
-      <p>App content </p>
-      <p>App content </p>
-      <p>App content </p>
-      <p>App content </p>
-      <p>App content </p>
-      <p>App content </p>
-      <p>App content </p>
-      <p>App content </p>
-      <p>App content </p>
-      <p>App content </p>
-      <p>App content </p>
-      <p>App content </p>
-      <p>App content </p>
-      <p>App content </p>
-      <p>App content </p>
-      <p>App content </p>
-      <p>App content </p>
-      <p>App content </p>
-      <p>App content </p>
-      <p>App content </p>
-      <p>App content </p>
-      <p>App content </p>
-      <p>App content </p>
-      <p>App content </p>
-      <p>App content </p>
-      <p>App content </p>
-      <p>App content </p>
-      <p>App content </p>
-      <p>App content </p>
-      <p>App content </p>
-      <p>App content </p>
+      <div class="app-content">
+        <div class="card">
+          <h1>Card Header</h1>
+          <p>Lorem ipsum dolor sit amet, eleifend dui, convallis imperdiet odio. Libero aptent, sed elit. Ornare eros wisi, id torquent fringilla. Sit dui placerat. Sed lacinia phasellus. Cras cum, ut commodo rutrum. Elementum id, sagittis nam. Dui lectus, sapien diam maecenas. Sed etiam luctus. Nibh tempor, orci lectus, purus morbi.</p>
+          <p>Eu sagittis, ut arcu. Vestibulum sagittis nisl, lobortis eget gravida. Vehicula sem enim, tellus sit, posuere nulla. Fringilla erat sit, erat natoque. Ac elit, fusce pulvinar, sed velit sed. Et risus, massa in id.</p>
+          <p>Morbi faucibus, platea risus. Eget non. Aenean dolor ligula. Ante porta, pede tempus, luctus bibendum integer. Dolor quis, mi in. Nisl id est. Nec nam, malesuada lectus. Lacinia ut, posuere odio nunc. Elementum hendrerit quisque, aliquet luctus semper. Pede dolor commodo, velit magna, donec sollicitudin. Suscipit nulla, in vulputate.</p>
+          <p>Turpis sed. Tincidunt quis maecenas. Ac nulla, condimentum ligula, metus in. Urna felis, malesuada dolor. Vel cras diam, id lobortis, donec rutrum. Condimentum donec vulputate. Accusamus quisque nunc, dolores rutrum, quam eget aenean. Ac blandit magna, posuere risus feugiat, etiam erat ante. Interdum laoreet convallis, erat tortor vestibulum. Lectus pede justo.</p>
+        </div>
+
+        <button id="modal-button" class="fixed-button">Open Modal</button>
+      </div>
     </div>
   </body>
 </html>
