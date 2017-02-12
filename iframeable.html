@@ -50,7 +50,6 @@
       </div>
     </div>
     <div class="app">
-      <div class="app-menu">App Container</div>
 
       <div class="app-content">
         <div class="card">
@@ -61,8 +60,21 @@
           <p>Turpis sed. Tincidunt quis maecenas. Ac nulla, condimentum ligula, metus in. Urna felis, malesuada dolor. Vel cras diam, id lobortis, donec rutrum. Condimentum donec vulputate. Accusamus quisque nunc, dolores rutrum, quam eget aenean. Ac blandit magna, posuere risus feugiat, etiam erat ante. Interdum laoreet convallis, erat tortor vestibulum. Lectus pede justo.</p>
         </div>
 
-        <button id="modal-button" class="fixed-button">Open Modal</button>
       </div>
     </div>
   </body>
 </html>
+
+<body id="fixed-layer"
+  style="
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+  ">
+  <!-- fixed elements go here -->
+  <div class="app-menu">App Container</div>
+  <button id="modal-button" class="fixed-button">Open Modal</button>
+</body>
